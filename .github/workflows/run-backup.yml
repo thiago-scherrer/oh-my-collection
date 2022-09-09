@@ -7,6 +7,9 @@ jobs:
   go-backup:
     name: Setup
     runs-on: ubuntu-latest
+    env:
+      USER: ${{ secret.USER }}
+      TOKEN: ${{ secret.TOKEN }}
     steps:
     -
       name: Check out
