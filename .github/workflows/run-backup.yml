@@ -1,0 +1,23 @@
+name: Make a discog backup
+
+on:
+  push:
+
+jobs:
+  go-backup:
+    name: Setup
+    runs-on: ubuntu-latest
+    steps:
+    -
+      name: Check out
+      uses: actions/checkout@v3
+    -
+      name: Go backup
+      run: |
+        go run main.go > discog.json
+    -
+      name: Upload backup
+      uses: actions/upload-artifact@v3
+      with:
+        name: discog_collections
+        path: discog.json
