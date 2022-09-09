@@ -15,6 +15,7 @@ jobs:
       name: Go backup
       run: |
         go run main.go > discog.json
+        jq discog_json
     -
       name: Upload backup
       uses: actions/upload-artifact@v3
