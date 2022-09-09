@@ -1,7 +1,8 @@
 name: Make a discog backup
 
 on:
-  push:
+  schedule:
+    - cron:  '30 18 * * *'
 
 jobs:
   go-backup:
