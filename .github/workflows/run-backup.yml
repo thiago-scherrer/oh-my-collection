@@ -8,8 +8,8 @@ jobs:
     name: Setup
     runs-on: ubuntu-latest
     env:
-      USER: ${{ secret.USER }}
-      TOKEN: ${{ secret.TOKEN }}
+      USER: ${{ secrets.USER }}
+      TOKEN: ${{ secrets.TOKEN }}
     steps:
     -
       name: Check out
